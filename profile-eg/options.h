@@ -22,6 +22,9 @@ int parse_options(int argc, char *argv[], char *otherargs[]);
 
 /* Parse options from file */
 void parse_option_file(char *prog, FILE *option_file);
+// FILE type 
+// Object type that identifies a stream and contains the information needed to control it, 
+// including a pointer to its buffer, its position indicator and all its state indicators.
 
 /* Show which options are in effect */
 void show_options(FILE *outfile);

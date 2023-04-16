@@ -39,6 +39,7 @@ static int match_length(char *s, char *t)
   }
   return result;
 }
+// static functions are functions that are only visible to other functions in the same file
 
 void usage(char *prog)
 {
