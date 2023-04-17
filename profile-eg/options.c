@@ -138,6 +138,11 @@ int parse_options(int argc, char *argv[], char *otherargs[])
     switch(options[j].type) {
     case INT_OPTION:
       if (sscanf(argv[i], "%d", options[j].valp.i) != 1) {
+        // int sscanf ( const char * s, const char * format, ...);
+        // Reads data from s and stores them according to parameter format 
+        // into the locations given by the additional arguments
+        // On success, the function returns the number of items 
+        // in the argument list successfully filled. 
 	fprintf(stderr, "Can't parse argument '%s' as integer\n", argv[i]);
 	usage(prog);
       }
@@ -153,8 +158,7 @@ int parse_options(int argc, char *argv[], char *otherargs[])
       *(options[j].valp.s) = argv[i];
       break;
     default:
-      fprintf(stderr,
-	      "Internal error.  Don't know option type %d\n", options[j].type);
+      fprintf(stderr, "Internal error.  Don't know option type %d\n", options[j].type);
       exit(1);
     }
   }
@@ -166,6 +170,7 @@ static char *strsave(char *s)
 {
   char *result = (char *) malloc(strlen(s)+1);
   strcpy (result, s);
+  // char * strcpy ( char * destination, const char * source );
   return result;
 }
 
